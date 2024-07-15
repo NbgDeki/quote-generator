@@ -1,0 +1,42 @@
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50%, -50%;
+}
+
+// MEDIA QUERY MANAGER
+/*
+0-600px: Phone
+0-900px: Tablet portrait
+0-1200px: Tablet lanscape
+[1200-1800] is where our normal styles apply
+1800px+ : Phone
+*/
+
+@mixin max($breakpoint) {
+  @if $breakpoint == s {
+    @media (width <= 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+  @if $breakpoint == m {
+    @media (width <= 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+  @if $breakpoint == l {
+    @media (width <= 75em) {
+      // 1200px
+      @content;
+    }
+  }
+  @if $breakpoint == xl {
+    @media (width >= 112.5em) {
+      // 1800px
+      @content;
+    }
+  }
+}

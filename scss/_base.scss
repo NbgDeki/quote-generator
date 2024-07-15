@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 *,
 *::before,
 *::after {
@@ -13,6 +14,7 @@
 
 html {
   font-size: 62.5%;
+  // color-scheme: dark light;
   scroll-behavior: smooth;
 }
 
@@ -42,13 +44,3 @@ video {
   object-fit: cover;
   shape-margin: 0.75rem;
 }
-
-/*
-0-600px: Phone
-0-900px: Tablet portrait
-0-1200px: Tablet lanscape
-[1200-1800] is where our normal styles apply
-1800px+ : Phone
-*/
-
-/*# sourceMappingURL=main.css.map */
