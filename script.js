@@ -1,4 +1,5 @@
 let apiQuotes = [];
+const quoteContainer = document.getElementById('quote-container');
 
 // Show New Quote
 function newQuote(randomNumber) {
@@ -25,9 +26,6 @@ async function showQuoteInDOM() {
   const { text, author } = await getQuotes();
 
   // Make quote container div
-  const quoteContainer = document.createElement('div');
-  quoteContainer.classList.add('quote-container');
-  quoteContainer.id = 'quote-container';
 
   // Quote
   // Make quote text div
@@ -82,14 +80,17 @@ async function showQuoteInDOM() {
   quoteContainer.appendChild(quoteAuthor);
   quoteContainer.appendChild(buttonContainer);
 
-  const newQuoteEl = document.getElementById('new-quote');
-  console.log(newQuoteEl);
-
   document.body.appendChild(quoteContainer);
 }
 
 // On Load
-
-// showQuoteInDOM();
-
 document.addEventListener('DOMContentLoaded', showQuoteInDOM);
+quoteContainer.addEventListener('click', (e) => {
+  if (e.target.id === 'new-quote') {
+    while (quoteContainer.firstChild) {
+      quoteContainer.removeChild(quoteContainer.firstChild);
+    }
+
+    showQuoteInDOM();
+  }
+});
